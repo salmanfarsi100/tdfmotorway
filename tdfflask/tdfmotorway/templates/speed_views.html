@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <h1>Speed Table</h1>
+    <form method="POST" action="/ofe_views/">
+      <input type="submit" name="submit_button" value="Home">
+      <input type="submit" name="submit_button" value="Delete Records">
+    </form>
+    <table border='1'>
+    	<thead>
+    		<tr>
+    			<th>Speed</th>
+    			<th>Vehicle Range</th>
+    			<th>Date-Time</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    			{% for current_speed in speed_database %}
+    				<tr>
+    					<td>{{ current_speed.speed }}</td>
+    					<td>{{ current_speed.vehiclerange }}</td>
+    					<td>{{ current_speed.datetime }}</td>
+    				</tr>
+    			{% endfor %}
+    	</tbody>
+    </table>
+  </body>
+</html>
